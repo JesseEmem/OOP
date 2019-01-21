@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
-//import java.awt.Color;
 
 public class AppaOrder extends JFrame implements ActionListener
 {
@@ -11,34 +10,9 @@ public class AppaOrder extends JFrame implements ActionListener
 	JTextField CartName,total, totalHolder,cashbox,changebox,cashStatement,changeStatement;
 	int x1=159,x2=199,y1=259,y2=299,z1=359,z2=399;
 	int Total=0;
+	int cash;
+	int change;
 	String OrderList="";
-
-	Icon pic1 = new ImageIcon("F:/OOP_as/Pics/Grizzly_Backpack.png");
-	Icon pic2 = new ImageIcon("F:/OOP_as/Pics/Grizzly_Pants.png");
-	Icon pic3 = new ImageIcon("F:/OOP_as/Pics/Grizzly_Shirt.png");
-	Icon pic4 = new ImageIcon("F:/OOP_as/Pics/Grizzly_Sliders.png");
-	Icon pic5 = new ImageIcon("F:/OOP_as/Pics/Icebear_Backpack.png");
-	Icon pic6 = new ImageIcon("F:/OOP_as/Pics/Icebear_Pants.png");
-	Icon pic7 = new ImageIcon("F:/OOP_as/Pics/Icebear_Pullover.png");
-	Icon pic8 = new ImageIcon("F:/OOP_as/Pics/Icebear_Shirt.png");
-	Icon pic9 = new ImageIcon("F:/OOP_as/Pics/Icebear_Sliders.png");
-	Icon pic10 = new ImageIcon("F:/OOP_as/Pics/Panda_Backpack.png");
-	Icon pic11 = new ImageIcon("F:/OOP_as/Pics/Panda_Pants.png");
-	Icon pic12 = new ImageIcon("F:/OOP_as/Pics/Panda_Pullover.png");
-	Icon pic13 = new ImageIcon("F:/OOP_as/Pics/Panda_Shirt.png");
-	Icon pic14 = new ImageIcon("F:/OOP_as/Pics/Panda_Sliders.png");
-	Icon pic15 = new ImageIcon("F:/OOP_as/Pics/WBB_Backpack.png");
-	Icon pic16 = new ImageIcon("F:/OOP_as/Pics/WBB_Sliders.png");
-	Icon pic17= new ImageIcon("F:/OOP_as/Pics/WBB_Sneakers.png");
-	Icon pic18 = new ImageIcon("F:/OOP_as/Pics/WBB1_Shirt.png");
-	Icon pic19 = new ImageIcon("F:/OOP_as/Pics/WWB2_Shirt.png");
-	Icon pic20 = new ImageIcon("F:/OOP_as/Pics/WWB3_Shirt.png");
-	Icon Title = new ImageIcon("F:/OOP_as/AppaPics/title.png");
-	Icon Title2 = new ImageIcon("F:/OOP_as/AppaPics/title2.png");
-	Icon logo = new ImageIcon("F:/OOP_as/AppaPics/logo.jpg");
-	Icon nextlogo = new ImageIcon("F:/OOP_as/AppaPics/next.png");
-	Icon sponsorlogo = new ImageIcon("F:/OOP_as/AppaPics/sponsor.png");
-	Icon BG = new ImageIcon("F:/OOP_as/Pics/bg.png");
 
 	public AppaOrder()
 	{
@@ -49,33 +23,30 @@ public class AppaOrder extends JFrame implements ActionListener
 		x.setBackground(new Color(255,255,255));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		labTitle1 = new JLabel(Title);
-		labTitle2 = new JLabel(Title2);
-		icon = new JLabel(logo);
-		bt1 = new JButton(pic1);
-		bt2 = new JButton(pic2);
-		bt3 = new JButton(pic3);
-		bt4 = new JButton(pic4);
-		bt5 = new JButton(pic5);
-		bt6 = new JButton(pic6);
-		bt7 = new JButton(pic7);
-		bt8 = new JButton(pic8);
-		bt9 = new JButton(pic9);
-		bt10 = new JButton(pic10);
-		bt11 = new JButton(pic11);
-		bt12 = new JButton(pic12);
-		bt13 = new JButton(pic13);
-		bt14 = new JButton(pic14);
-		bt15 = new JButton(pic15);
-		bt16 = new JButton(pic16);
-		bt17 = new JButton(pic17);
-		bt18 = new JButton(pic18);
-		bt19 = new JButton(pic19);
-		bt20 = new JButton(pic20);
-		next = new JButton(nextlogo);
-		sponsorIcon = new JLabel(sponsorlogo);
-		sponsorState = new JLabel("Sponsored By:");
-		sponsorState.setFont(new Font("Brush Script MT",Font.PLAIN,20));
+		labTitle1 = new JLabel(new ImageIcon("F:/OOP_as/AppaPics/title.png"));
+		labTitle2 = new JLabel(new ImageIcon("F:/OOP_as/AppaPics/title2.png"));
+		icon = new JLabel(new ImageIcon("F:/OOP_as/AppaPics/logo.jpg"));
+		bt1 = new JButton(new ImageIcon("F:/OOP_as/Pics/Grizzly_Backpack.png"));
+		bt2 = new JButton(new ImageIcon("F:/OOP_as/Pics/Grizzly_Pants.png"));
+		bt3 = new JButton(new ImageIcon("F:/OOP_as/Pics/Grizzly_Shirt.png"));
+		bt4 = new JButton(new ImageIcon("F:/OOP_as/Pics/Grizzly_Sliders.png"));
+		bt5 = new JButton(new ImageIcon("F:/OOP_as/Pics/Icebear_Backpack.png"));
+		bt6 = new JButton(new ImageIcon("F:/OOP_as/Pics/Icebear_Pants.png"));
+		bt7 = new JButton(new ImageIcon("F:/OOP_as/Pics/Icebear_Pullover.png"));
+		bt8 = new JButton(new ImageIcon("F:/OOP_as/Pics/Icebear_Shirt.png"));
+		bt9 = new JButton(new ImageIcon("F:/OOP_as/Pics/Icebear_Sliders.png"));
+		bt10 = new JButton(new ImageIcon("F:/OOP_as/Pics/Panda_Backpack.png"));
+		bt11 = new JButton(new ImageIcon("F:/OOP_as/Pics/Panda_Pants.png"));
+		bt12 = new JButton(new ImageIcon("F:/OOP_as/Pics/Panda_Pullover.png"));
+		bt13 = new JButton(new ImageIcon("F:/OOP_as/Pics/Panda_Shirt.png"));
+		bt14 = new JButton(new ImageIcon("F:/OOP_as/Pics/Panda_Sliders.png"));
+		bt15 = new JButton(new ImageIcon("F:/OOP_as/Pics/WBB_Backpack.png"));
+		bt16 = new JButton(new ImageIcon("F:/OOP_as/Pics/WBB_Sliders.png"));
+		bt17 = new JButton(new ImageIcon("F:/OOP_as/Pics/WBB_Sneakers.png"));
+		bt18 = new JButton(new ImageIcon("F:/OOP_as/Pics/WBB1_Shirt.png"));
+		bt19 = new JButton(new ImageIcon("F:/OOP_as/Pics/WWB2_Shirt.png"));
+		bt20 = new JButton(new ImageIcon("F:/OOP_as/Pics/WWB3_Shirt.png"));
+		next = new JButton(new ImageIcon("F:/OOP_as/AppaPics/next.png"));
 		t1 = new JLabel("Price:P"+x1);
 		t2 = new JLabel("Price: P"+x1);
 		t3 = new JLabel("Price: P"+x1);
@@ -96,10 +67,8 @@ public class AppaOrder extends JFrame implements ActionListener
 		t18 = new JLabel("Price: P"+z1);
 		t19 = new JLabel("Price: P"+z2);
 		t20 = new JLabel("Price: P"+z2);
-		lblBG = new JLabel(BG);
 		process = new JButton("Compute");
 		process.setFont(new Font("Ink Free",Font.PLAIN,20));
-
 		nextStatement = new JLabel("Next Customer");
 
 		cartView = new JTextArea(25,40);
@@ -363,7 +332,7 @@ public class AppaOrder extends JFrame implements ActionListener
 				if(exec.getSource()==bt8)
 				{
 					int qty = Integer.parseInt(JOptionPane.showInputDialog("Quantity:"));
-					int subtotal=x2*qty;
+					int subtotal=y1*qty;
 					OrderList+="\n Prod 08\t Icebear Shirt \t"+qty+"\t"+y1+"\t"+subtotal;
 					Total+=subtotal;
 					cartView.setText(OrderList);
@@ -372,7 +341,7 @@ public class AppaOrder extends JFrame implements ActionListener
 				if(exec.getSource()==bt9)
 				{
 					int qty = Integer.parseInt(JOptionPane.showInputDialog("Quantity:"));
-					int subtotal=x2*qty;
+					int subtotal=y1*qty;
 					OrderList+="\n Prod 09\t Icebear Sliders"+" "+" "+qty+"\t"+y1+"\t"+subtotal;
 					Total+=subtotal;
 					cartView.setText(OrderList);
@@ -381,7 +350,7 @@ public class AppaOrder extends JFrame implements ActionListener
 				if(exec.getSource()==bt10)
 				{
 					int qty = Integer.parseInt(JOptionPane.showInputDialog("Quantity:"));
-					int subtotal=x2*qty;
+					int subtotal=y1*qty;
 					OrderList+="\n Prod 010\t Panda Backpack"+" "+" "+qty+"\t"+y1+"\t"+subtotal;
 					Total+=subtotal;
 					cartView.setText(OrderList);
@@ -390,7 +359,7 @@ public class AppaOrder extends JFrame implements ActionListener
 				if(exec.getSource()==bt11)
 				{
 					int qty = Integer.parseInt(JOptionPane.showInputDialog("Quantity:"));
-					int subtotal=x2*qty;
+					int subtotal=y1*qty;
 					OrderList+="\n Prod 011\t Panda Pants \t"+qty+"\t"+y1+"\t"+subtotal;
 					Total+=subtotal;
 					cartView.setText(OrderList);
@@ -399,7 +368,7 @@ public class AppaOrder extends JFrame implements ActionListener
 				if(exec.getSource()==bt12)
 				{
 					int qty = Integer.parseInt(JOptionPane.showInputDialog("Quantity:"));
-					int subtotal=x2*qty;
+					int subtotal=y1*qty;
 					OrderList+="\n Prod 012\t Panda Pullover"+" "+" "+qty+"\t"+y1+"\t"+subtotal;
 					Total+=subtotal;
 					cartView.setText(OrderList);
@@ -411,7 +380,7 @@ public class AppaOrder extends JFrame implements ActionListener
 				if(exec.getSource()==bt13)
 				{
 					int qty = Integer.parseInt(JOptionPane.showInputDialog("Quantity:"));
-					int subtotal=x2*qty;
+					int subtotal=y2*qty;
 					OrderList+="\n Prod 013\t Panda Shirt \t"+qty+"\t"+y2+"\t"+subtotal;
 					Total+=subtotal;
 					cartView.setText(OrderList);
@@ -420,7 +389,7 @@ public class AppaOrder extends JFrame implements ActionListener
 				if(exec.getSource()==bt14)
 				{
 					int qty = Integer.parseInt(JOptionPane.showInputDialog("Quantity:"));
-					int subtotal=x2*qty;
+					int subtotal=y2*qty;
 					OrderList+="\n Prod 014\t Panda Sliders \t"+qty+"\t"+y2+"\t"+subtotal;
 					Total+=subtotal;
 					cartView.setText(OrderList);
@@ -429,7 +398,7 @@ public class AppaOrder extends JFrame implements ActionListener
 				if(exec.getSource()==bt15)
 				{
 					int qty = Integer.parseInt(JOptionPane.showInputDialog("Quantity:"));
-					int subtotal=x2*qty;
+					int subtotal=y2*qty;
 					OrderList+="\n Prod 015\t We Bare Bear Backpack "+" "+" "+qty+"\t"+y2+"\t"+subtotal;
 					Total+=subtotal;
 					cartView.setText(OrderList);
@@ -441,7 +410,7 @@ public class AppaOrder extends JFrame implements ActionListener
 				if(exec.getSource()==bt16)
 				{
 					int qty = Integer.parseInt(JOptionPane.showInputDialog("Quantity:"));
-					int subtotal=x2*qty;
+					int subtotal=z1*qty;
 					OrderList+="\n Prod 016\t We Bear Bare Sliders "+" "+" "+qty+"\t"+z1+"\t"+subtotal;
 					Total+=subtotal;
 					cartView.setText(OrderList);
@@ -450,7 +419,7 @@ public class AppaOrder extends JFrame implements ActionListener
 				if(exec.getSource()==bt17)
 				{
 					int qty = Integer.parseInt(JOptionPane.showInputDialog("Quantity:"));
-					int subtotal=x2*qty;
+					int subtotal=z1*qty;
 					OrderList+="\n Prod 017\t We Bare Bear Sneakers "+" "+" "+qty+"\t"+z1+"\t"+subtotal;
 					Total+=subtotal;
 					cartView.setText(OrderList);
@@ -459,7 +428,7 @@ public class AppaOrder extends JFrame implements ActionListener
 				if(exec.getSource()==bt18)
 				{
 					int qty = Integer.parseInt(JOptionPane.showInputDialog("Quantity:"));
-					int subtotal=x2*qty;
+					int subtotal=z1*qty;
 					OrderList+="\n Prod 018\t We Bare Bear Shirt 1 "+" "+" "+qty+"\t"+z1+"\t"+subtotal;
 					Total+=subtotal;
 					cartView.setText(OrderList);
@@ -471,7 +440,7 @@ public class AppaOrder extends JFrame implements ActionListener
 				if(exec.getSource()==bt19)
 				{
 					int qty = Integer.parseInt(JOptionPane.showInputDialog("Quantity:"));
-					int subtotal=x2*qty;
+					int subtotal=z2*qty;
 					OrderList+="\n Prod 019\t We Bear Bare Shirt 2"+" "+" "+qty+"\t"+z2+"\t"+subtotal;
 					Total+=subtotal;
 					cartView.setText(OrderList);
@@ -480,7 +449,7 @@ public class AppaOrder extends JFrame implements ActionListener
 				if(exec.getSource()==bt20)
 				{
 					int qty = Integer.parseInt(JOptionPane.showInputDialog("Quantity:"));
-					int subtotal=x2*qty;
+					int subtotal=z2*qty;
 					OrderList+="\n Prod 020\t  Bear Bare Shirt 3"+" "+" "+qty+"\t"+z2+"\t"+subtotal;
 					Total+=subtotal;
 					cartView.setText(OrderList);
@@ -489,9 +458,13 @@ public class AppaOrder extends JFrame implements ActionListener
 			}
 			if (exec.getSource()==next)
 			{
-					cartView.setText("");
+					OrderList="";
+					cartView.setText(OrderList);
+					Total=0;
 					totalHolder.setText("");
+					cash=0;
 					cashbox.setText("");
+					change=0;
 					changebox.setText("");
 					JOptionPane.showMessageDialog(null,"Next Customer Please!");
 			}
